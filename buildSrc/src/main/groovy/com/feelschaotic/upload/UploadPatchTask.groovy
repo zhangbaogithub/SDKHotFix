@@ -86,7 +86,7 @@ class UploadPatchTask extends DefaultTask {
             @Override
             def onSuccess(String response) {
                 JSONObject jsonObj = JSONObject.parse(response)
-                if (jsonObj.getJSONObject("result").get("code") != 0) {
+                if (jsonObj.get("code") != 0) {
                     println "--【警告】上传补丁信息到服务端失败,response如下:"
                     println response
                     return

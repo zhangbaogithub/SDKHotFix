@@ -5,13 +5,13 @@ apply plugin: com.feelschaotic.upload.UploadPatchPlugin
 apply from: rootProject.file('gradle/gradle_mvn_push.gradle')
 
 android {
-    compileSdkVersion 27
-    buildToolsVersion "27.0.3"
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
 
 
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 27
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -20,18 +20,18 @@ android {
         publishNonDefault false
         debug {
             // 可能测试环境和正式环境分离 到时候再扩展吧
-            buildConfigField "String", "HOTFIX_SERVER_URL", "\"https://api.bmob.cn/1/functions/\""
-            buildConfigField "String", "REST_API_KEY", "\"02ab887dd4c57015d8e346b5a728c569\""
-            buildConfigField "String", "BMOB_APPLICATION_ID", "\"960a7aa0e24065f4804242fb1e64a7f3\""
+            buildConfigField "String", "HOTFIX_SERVER_URL", "\"http://cloud.bmob.cn/2e00ff96bc9000bf/\""
+            buildConfigField "String", "REST_API_KEY", "\"2e36dfd8637f75eda218aa4970947cb6\""
+            buildConfigField "String", "BMOB_APPLICATION_ID", "\"31b0154940c1aff5338ab40db50a8f3d\""
             buildConfigField "String", "ACCESS_ID", "\"LTAI4Fx9ecT1eH86xzRKt2Yc\""
             buildConfigField "String", "BUCK_NAME", "\"sdkhotfix-app\""
             buildConfigField "String", "SECRET_KEY", "\"JtMMOLEtwxTZe31soVgKGpVbwovUP8\""
             buildConfigField "String", "END_POINT", "\"https://oss-cn-shenzhen.aliyuncs.com\""
         }
         release {
-            buildConfigField "String", "HOTFIX_SERVER_URL", "\"https://api.bmob.cn/1/functions/\""
-            buildConfigField "String", "REST_API_KEY", "\"02ab887dd4c57015d8e346b5a728c569\""
-            buildConfigField "String", "BMOB_APPLICATION_ID", "\"960a7aa0e24065f4804242fb1e64a7f3\""
+            buildConfigField "String", "HOTFIX_SERVER_URL", "\"http://cloud.bmob.cn/2e00ff96bc9000bf/\""
+            buildConfigField "String", "REST_API_KEY", "\"2e36dfd8637f75eda218aa4970947cb6\""
+            buildConfigField "String", "BMOB_APPLICATION_ID", "\"31b0154940c1aff5338ab40db50a8f3d\""
             buildConfigField "String", "ACCESS_ID", "\"LTAI4Fx9ecT1eH86xzRKt2Yc\""
             buildConfigField "String", "BUCK_NAME", "\"sdkhotfix-app\""
             buildConfigField "String", "SECRET_KEY", "\"JtMMOLEtwxTZe31soVgKGpVbwovUP8\""

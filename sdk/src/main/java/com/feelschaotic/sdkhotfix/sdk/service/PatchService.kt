@@ -1,5 +1,6 @@
 package com.feelschaotic.sdkhotfix.sdk.service
 
+import android.util.Log
 import com.alibaba.fastjson.JSON
 import com.feelschaotic.sdkhotfix.sdk.entity.DownloadRequest
 import okhttp3.*
@@ -13,6 +14,7 @@ import java.util.concurrent.TimeUnit
  * @create 2019/6/5.
  */
 class PatchService {
+    private val tag = "PatchService"
     private val client: OkHttpClient = OkHttpClient.Builder()
             .connectTimeout(5, TimeUnit.SECONDS)
             .readTimeout(10, TimeUnit.SECONDS)
@@ -28,6 +30,7 @@ class PatchService {
             return
         }
         val requestJson = JSON.toJSONString(map)
+        Log.e(tag, "request:$requestJson")
         client.newCall(Request.Builder()
                 .url(url)
                 .headers(headers)
